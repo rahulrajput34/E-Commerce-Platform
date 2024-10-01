@@ -11,12 +11,14 @@ import Product from './pages/Product'
 import Login from './pages/Login'
 import Orders from './pages/Orders'
 import Footer from './components/Footer'
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       {/* This Navbar will be visible in all pages because we give above of the routes */}
       <Navbar/>
+      <SearchBar/>
         <Routes>
           <Route path='/' element= {<Home/>} />
           <Route path='/collection' element={<Collection/>} />

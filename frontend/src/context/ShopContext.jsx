@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { createContext } from "react";
 import { products } from "../assets/assets";
 
@@ -8,11 +9,18 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     const currency = '$';
     const deliveryFees = 10;
+    const [search, setSearch] = useState('');
+    // Here we set the true so that the by default there is a search bar in our webpage
+    const [showSearch, setShowSearch] = useState(true);
 
     const value = {
         products, 
         currency,
-        deliveryFees
+        deliveryFees,
+        search,
+        setSearch,
+        showSearch,
+        setShowSearch
     }
 
     return (
