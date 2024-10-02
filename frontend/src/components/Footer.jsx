@@ -23,14 +23,14 @@ function Footer() {
         <div>
             <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>+1-365-888-9999</li>
-                <li>contact(rahul@gmail.com)</li>
+                <li>+1 (416) 555-1234</li>
+                <li>rahulrajput@rr.com</li>
             </ul>
         </div>
         </div>
         <div>
             <hr />
-            <p className='py-5 text-sm text-center'>Copyright 2024@ forever.com - ALL Right Reserverd</p>
+            <p className='py-5 text-sm text-center'>Copyright 2024@ RR-Clothing.com - ALL Right Reserverd</p>
         </div>
     </div>
   )
