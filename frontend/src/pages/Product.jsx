@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
+import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
 
@@ -75,6 +76,7 @@ const Product = () => {
             <div className='flex gap-2'>
               {
                 // item is diff sized we gonna get
+                // means from project name we getting perticuler data from using JSON
                 productData.sizes.map((item, index) => {
                   return (
                     // on the onclick we set value of size which one is clicked
@@ -86,9 +88,31 @@ const Product = () => {
               }
             </div>
           </div>
-          <button className='bg-black text-white px-8 py-3 text-sm'></button>
+          <button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+          <hr className='mt-8 sm:w-4/5'/>
+          <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+            <p>100% Original product.</p>
+            <p>Cash on delivery is available on this product.</p>
+            <p>Rasy return and exchange policy within 7  days.</p>
+          </div>
         </div>
       </div>
+      {/* disscription and review section */}
+      <div className='mt-20'>
+        <div className='flex'>
+              <b className='border px-5 py-3 text-sm'>Description</b>
+              <p className='border px-5 py-3 text-sm'>Reviews(122)</p>
+        </div>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quasi recusandae incidunt nihil fuga culpa voluptatibus voluptatum animi consectetur corrupti, veniam suscipit nulla quidem cum. Cupiditate numquam accusantium saepe incidunt delectus, quae dicta enim quo autem possimus amet quod ex tempora dolor, corrupti deleniti iure dolores provident maiores, temporibus omnis! Repellendus.
+          </p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus repudiandae quis blanditiis culpa, beatae asperiores aut numquam sunt quibusdam hic provident commodi nesciunt quaerat earum eligendi iusto obcaecati doloribus.
+          </p>
+        </div>
+      </div>
+      {/* display related products */}
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
     </div>
   ) : (
     <div className='opacity-0'>Loading...</div>
