@@ -1,5 +1,4 @@
 // Logic of create an account and the login on the website
-
 import userModel from "../models/userModel.js";
 import validator from "validator";
 import bcrypt from "bcrypt";
@@ -10,7 +9,8 @@ const createToken = (id) => {
     return jwt.sign({ id: id }, process.env.JWT_SECRET_KEY);
 }
 
-// Route for user Login (LogIn)
+// Route for user Login is in the router folder
+// we can check from going thunder client and give route of loginUser is it working or not?
 const loginUser = async (req, res) => {
     try{
         // This is what the user is passed from the forms
@@ -40,7 +40,7 @@ const loginUser = async (req, res) => {
    
 }
 
-// Route for user Registration (SignUp)
+// Route for user Registration is in route folder
 // We can check this function is working or not on thunder client by passing json of name email and password in body
 const registerUser = async (req, res) => {
     try {

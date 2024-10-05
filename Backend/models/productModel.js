@@ -1,5 +1,5 @@
 // Creating mongoes model , from using this we can store the data in data base
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 // creating the schema for Products
 // Schema is the structur using that we can create the data into the data base
@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
         required: true,
     },
     image: {
-        type: String,
+        type: Array,
         required: true,
     },
     category: {
@@ -30,11 +30,10 @@ const productSchema = new mongoose.Schema({
     },
     sizes: {
         type: Array,
-        required: true,
+        required: false,
     },
     bestseller: {
-        type: Boolean,
-        required: true,
+        type: Boolean
     },
     date: {
         type: Number,

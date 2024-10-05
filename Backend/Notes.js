@@ -66,3 +66,41 @@ And then passed it to api endpoints in server
 3.Salt: A random value added to the password before hashing to prevent attacks using precomputed hash tables, enhancing security.
 4.Storing Passwords Securely: Hashed passwords are stored in the database instead of plaintext passwords, protecting user credentials even if the database is compromised.
 */
+
+
+// ********************************** What is middle ware *********************************************************
+/*
+Middleware is like a helper that sits between two parts of a computer program to help them talk to each other. Imagine you're sending a message through a mail service. The mail carrier (middleware) picks up your message, checks if everything is okay, and delivers it to the right place. It also makes sure that any response you get back is handled properly.
+
+In other words, Middleware is a software component that sits between a user's request and the server, helping to process and manage that request before it reaches the main application or database. It can perform various tasks, such as checking user permissions, logging activities, handling file uploads, and validating data. If the request meets the specified criteria, the middleware allows it to proceed to the next step in the process; if there are issues, it can stop the request and provide feedback. This ensures that the application runs smoothly and securely.
+*/
+/*
+So, here multer is middleware which used in website for, when a user uploads data (like files), Multer acts as middleware that checks the data before it is sent to the server or stored in the database. If the uploaded data is valid and meets the specified criteria (like file type or size), Multer allows it to proceed to the next step (like saving it to the server or database). If there are issues, it can stop the process and provide feedback.
+ */
+
+// Method for storing the products into the database
+/*
+// Login of product
+// function for add product
+// to add the product use middle ware multer
+
+ // req.body refers to an object that contains the data sent by the client 
+        // it is in-build in express
+
+// to get image from file
+        // TODO: images showing undefiend excpet from one image
+
+// We need to store this data and images into the database
+// but in the data base we can not able to store the image 
+// So first we need to upload these images on the cloudinary 
+// from cloudinary we got the url and then we can store our data into the data base
+// if anything undefined in array then remove it
+
+// Now we should Store into the database
+// all the data comes in string from cloudinary
+// This below code should match the format of the product model
+
+// before adding this to data bace lets do console log
+
+
+*/
