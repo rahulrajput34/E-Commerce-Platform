@@ -9,7 +9,8 @@ const addProduct = async (req, res) => {
         // it is in-build in express
         const { name, description, price, category, subCategory, sizes, bestseller } = req.body;
         // to get image from file
-        // TODO: images showing undefiend excpet from one image
+        // TODO: it shows undefiend excpet from first image
+        console.log(req.files);  // to check what user is passing
         const image1 = req.files.image1 && req.files.image1[0];
         const image2 = req.files.image2 && req.files.image2[0];
         const image3 = req.files.image3 && req.files.image3[0];
@@ -29,6 +30,7 @@ const addProduct = async (req, res) => {
                 return result.secure_url;
             })
         )
+        console.log(imagesUrl);
         
         // Now we should Store into the database
         // all the data comes in string from cloudinary
@@ -46,14 +48,12 @@ const addProduct = async (req, res) => {
         }
         // before adding this to data bace lets do console log
         console.log(productData);
-
         // To add the product into the data base we need to import the model
         const product = new productModel(productData);
         await product.save(); // to save the product into the data base
         res.json({ success: true, message: "Product added successfully" });
         }  catch (error) {
-        res.json({ success: false, message: error.message });
-        
+        res.json({ success: false, message: error.message });   
     }
 }
 

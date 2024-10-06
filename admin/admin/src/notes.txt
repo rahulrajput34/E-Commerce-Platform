@@ -1,0 +1,9 @@
+Installed dependensies
+npm install axios  --for API
+react-router-dom   --for router
+react-toastify     --for notification
+
+
+==>
+Then we give same port number to the admin and fronend
+in viteconfig add the server and give port number

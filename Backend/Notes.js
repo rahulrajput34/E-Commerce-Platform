@@ -78,29 +78,16 @@ In other words, Middleware is a software component that sits between a user's re
 So, here multer is middleware which used in website for, when a user uploads data (like files), Multer acts as middleware that checks the data before it is sent to the server or stored in the database. If the uploaded data is valid and meets the specified criteria (like file type or size), Multer allows it to proceed to the next step (like saving it to the server or database). If there are issues, it can stop the process and provide feedback.
  */
 
-// Method for storing the products into the database
+
+// ********************************* Fucntionp param - req, res, next **************************
 /*
-// Login of product
-// function for add product
-// to add the product use middle ware multer
+req (Request): Represents the HTTP request made by the client, containing details like headers, body, and parameters. It's used to extract data like the JWT token for authentication.
+res (Response): Represents the HTTP response sent back to the client. It's used to send data, status codes, or errors, like a 401 Unauthorized if the token is invalid.
+next (Next Middleware): A function that passes control to the next middleware or route handler. It ensures the request continues if authentication is successful.
+*/
 
- // req.body refers to an object that contains the data sent by the client 
-        // it is in-build in express
-
-// to get image from file
-        // TODO: images showing undefiend excpet from one image
-
-// We need to store this data and images into the database
-// but in the data base we can not able to store the image 
-// So first we need to upload these images on the cloudinary 
-// from cloudinary we got the url and then we can store our data into the data base
-// if anything undefined in array then remove it
-
-// Now we should Store into the database
-// all the data comes in string from cloudinary
-// This below code should match the format of the product model
-
-// before adding this to data bace lets do console log
-
+/*
+Token:
+eyJhbGciOiJIUzI1NiJ9.YWRtaW5AcnJjbG90aGluZy5jb20xMjM0NTY3OA.AmSndvnkMoDgw9QTEqABZWKLMMGyYEESGPQcgMAeswI
 
 */

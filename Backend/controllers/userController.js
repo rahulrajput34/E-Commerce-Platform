@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 
+
 const createToken = (id) => {
     return jwt.sign({ id: id }, process.env.JWT_SECRET_KEY);
 }
@@ -91,13 +92,27 @@ const registerUser = async (req, res) => {
     }
 }
 
-// Router for admin Login
+// Create basic authentication mechanism for an admin
 const adminLogin = async (req, res) => {
-
+    try {
+        // what email and password is submitted by the user
+        const {email, password} = req.body;
+        // if its match admin credentials then jwt token is created
+        // This token if for preventing that all time login credentials give for the login
+        if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+            // create the token with combination of email and password
+            const token = jwt.sign(email+password, process.env.JWT_SECRET_KEY);
+            res.json({success: true, token});
+        }
+    } catch (error) {
+        res.json({success: false, message: error.message});
+        console.log("Error in the adminLogin in user control");
+    }
 }
+// We collect the token from here and gonna pass it to middle ware
 
 export {
     loginUser,
     registerUser,
-    adminLogin
+    adminLogin,
 }
